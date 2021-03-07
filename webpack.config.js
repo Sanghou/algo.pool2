@@ -1,17 +1,25 @@
 const path = require("path");
+const mode = process.env.NODE_ENV || "development";
+
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "development",
+  mode,
   entry: path.resolve(__dirname, "src", "index.tsx"),
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
   },
+  resolve: {
+    extensions: [".ts", ".tsx", ".js"],
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+    },
+  },
   module: {
     rules: [
       {
-        test: /\.(js|jsx|tsx)?$/,
+        test: /\.(js|jsx)?$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -20,17 +28,24 @@ module.exports = {
           },
         },
       },
-      // {
-      //   test: /\.html$/,
-      //   use: [
-      //     {
-      //       loader: "html-loader",
-      //       options: {
-      //         minimize: true,
-      //       },
-      //     },
-      //   ],
-      // },
+      {
+        test: /\.tsx$/,
+        exclude: /node_module/, // node module 폴더는 babel 컴파일에서 제외
+        use: {
+          loader: "ts-loader", // babel loader가 파이프를 통해 js 코드를 불러옴
+        },
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader",
+            options: {
+              minimize: true,
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
