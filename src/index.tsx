@@ -1,12 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react"
+import ReactDOM from "react-dom"
 
 import App from "@/App"
 
-const a: String = "asdf"
+const a: string = "asdf"
 const b = "asdf"
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-)
+ReactDOM.render(<App />, document.getElementById("root"))
