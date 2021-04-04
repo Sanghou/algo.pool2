@@ -1,7 +1,9 @@
-const path = require("path");
-const mode = process.env.NODE_ENV || "development";
+/* eslint @typescript-eslint/no-var-requires: "off" */
+const path = require("path")
 
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const mode = process.env.NODE_ENV || "development"
+
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
   mode,
@@ -53,4 +55,4 @@ module.exports = {
       template: path.resolve(__dirname, "public", "index.html"),
     }),
   ],
-};
+}
