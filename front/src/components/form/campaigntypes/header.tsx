@@ -7,6 +7,8 @@ import Button from "@material-ui/core/Button"
 import IconButton from "@material-ui/core/IconButton"
 import MenuIcon from "@material-ui/icons/Menu"
 
+import NewHeader from "@/components/form/campaigntypes/newHeader"
+
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "white",
@@ -23,24 +25,22 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = (): React.FunctionComponentElement<Element> => {
   const classes = useStyles()
-
-  return (
-    <AppBar position="static" className={classes.root}>
-      <Toolbar>
-        <IconButton
-          edge="start"
-          className={classes.menuButton}
-          aria-label="menu"
-        >
-          <MenuIcon />
-        </IconButton>
-        <Typography variant="h6" className={classes.title}>
-          Header
-        </Typography>
-        <Button color="inherit">Login</Button>
-      </Toolbar>
-    </AppBar>
-  )
+  /* <AppBar position="fixed" className={classes.root}>
+        <Toolbar>
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            aria-label="menu"
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" className={classes.title}>
+            Header
+          </Typography>
+          <Button color="inherit">Login</Button>
+        </Toolbar>
+      </AppBar> */
+  return <NewHeader />
 }
 
 export default Header
