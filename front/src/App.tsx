@@ -6,7 +6,12 @@ const App = (): React.FunctionComponentElement<Element> => {
   return (
     <>
       <Header />
-      <h2>Hello with {state} </h2>
+      <h2
+        className="body"
+        style={{ top: "80px", position: "absolute", left: "0" }}
+      >
+        Hello with {state}
+      </h2>
     </>
   )
 }
