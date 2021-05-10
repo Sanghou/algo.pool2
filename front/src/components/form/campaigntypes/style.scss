@@ -10,16 +10,15 @@
     justify-content: space-between;
     margin: 0 auto;
     padding: 0 10px;
-    max-width: 780px;
+    max-width: 1240px;
     flex-basis: auto;
     height: 100%;
     align-items: center;
 
     .logo {
-      border: 1px solid #000000;
-      padding: 5px;
-      border-radius: 10px;
-      cursor: pointer;
+      img {
+        height: 100%;
+      }
     }
 
   }
